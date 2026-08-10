@@ -1,13 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Portfolio Hervé - BTS SIO SLAM</title>
-</head>
-<body>
-    <h1>Bienvenue sur mon portfolio</h1>
-    <p>Je m'appelle Hervé et je suis étudiant en BTS SIO SLAM. Ce portfolio présente mes projets et compétences dans le domaine de l'informatique.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio | BTS SIO SLAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="relative bg-gray-100 text-gray-900">
+    <!-- BACKGROUND IMAGE -->
+    <div
+      class="absolute inset-0 bg-[url('../assets/img/background/bg-code.jpg')] bg-cover bg-center bg-fixed opacity-20"
+    ></div>
+    <!-- OVERLAY CLAIR -->
+    <div class="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
+
+    <!-- CONTENT -->
+    <div class="relative">
+      <!-- HEADER -->
+      <header class="bg-blue-900 text-white shadow">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center p-5">
+          <h1 class="text-xl font-semibold">
+            Portfolio - BTS SIO option SLAM
+          </h1>
+          <ul class="flex gap-6 text-sm">
+            <li>
+              <a href="../index.html" class="hover:text-blue-300 transition"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="pages/projets.html"
+                class="hover:text-blue-300 transition"
+                >Projets</a
+              >
+            </li>
+            <li>
+              <a href="competences.html" class="hover:text-blue-300 transition"
+                >Compétences</a
+              >
+            </li>
+            <li>
+              <a href="veille.html" class="hover:text-blue-300 transition"
+                >Veille</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-blue-300 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      
+
+      <!-- SECTION A PROPOS -->
+      <section class="max-w-5xl mx-auto py-20 px-6">
+        <h2 class="text-4xl font-bold text-blue-900 mb-10 text-center">
+          Hervé MORATILLE
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- CV PREVIEW -->
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+            <img
+              src="../assets/img/cv-preview.png"
+              class="rounded-lg shadow w-56 h-auto mb-6 mx-auto"
+              alt="Aperçu du CV"
+            />
+
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4">Mon CV</h3>
+
+            <p class="text-gray-700 mb-6">
+              Retrouvez mon parcours professionnel, mes compétences techniques
+              et mes expériences dans mon CV complet au format PDF.
+            </p>
+
+            <div class="flex flex-row items-center justify-center gap-6 mt-8">
+              <!-- Bouton Voir en ligne -->
+              <a
+                href="../pages/cv.html"
+                class="inline-flex items-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:-translate-y-1 hover:scale-105 hover:shadow-xl transition transform duration-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 inline-block"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+                Voir en ligne
+              </a>
+              <!-- Bouton Télécharger -->
+              <a
+                href="../assets/pdf/CV-Hervé MORATILLE.pdf"
+                class="inline-flex items-center gap-2 bg-gray-200 text-blue-800 px-6 py-3 rounded-lg shadow hover:-translate-y-1 hover:scale-105 hover:shadow-xl transition transform duration-200"
+                download
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 inline-block"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- TEXTE -->
+          <div class="space-y-6 text-lg leading-relaxed">
+            <p class="text-gray-700">
+              J'étudie "en cours du soir" le
+              <strong>BTS SIO option SLAM</strong>. Je travaille depuis
+              plusieurs années dans le secteur médico‑social en tant qu’agent
+              technique supérieur, et j'ai aussi effectué une mission en tant
+              que <strong>référent informatique</strong>, pendant 4 ans, au sein
+              de l'association qui m'emploie. Le BTS SIO me permet de valider
+              les compétences acquises et pourquoi pas me réorienter vers
+              l’informatique, un domaine qui m’a toujours passionné.
+            </p>
+
+            <p class="text-gray-700">
+              Aujourd’hui, je me spécialise dans le
+              <strong>développement d’applications</strong>, l’<strong
+                >administration de systèmes</strong
+              >
+              et la <strong>gestion de projets techniques</strong>. J’aime
+              concevoir des solutions fiables, documentées et adaptées aux
+              besoins des utilisateurs.
+            </p>
+
+            <p class="text-gray-700">
+              Mon parcours atypique me permet d’apporter une vision concrète,
+              rigoureuse et orientée terrain, notamment dans les environnements
+              professionnels exigeants comme les ESMS.
+            </p>
+          </div>
+        </div>
+
+        <!-- COMPETENCES -->
+        <div class="mt-20">
+          <h3 class="text-3xl font-semibold text-blue-800 mb-6">
+            Compétences clés
+          </h3>
+
+          <ul class="grid md:grid-cols-2 gap-4 text-lg">
+            <li class="bg-white p-4 rounded-lg shadow">
+              Développement PHP / Symfony
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow">
+              JavaScript, AJAX, API REST
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow">
+              Développement REACT Vite / NodeJs
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow">Bootstrap, Mui</li>
+            <li class="bg-white p-4 rounded-lg shadow">
+              Gestion de projets & documentation
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow">
+              Administration systèmes (Windows, Linux)
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow">
+              Bases de données MySQL / MariaDB
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow">
+              Déploiement & versionnement (Git, GitHub)
+            </li>
+          </ul>
+        </div>
+
+        <!-- OBJECTIFS -->
+        <div class="mt-20">
+          <h3 class="text-3xl font-semibold text-blue-800 mb-6">
+            Objectifs professionnels
+          </h3>
+
+          <p class="text-lg text-gray-700 leading-relaxed">
+            À l’issue de mon BTS SIO SLAM, je souhaite renforcer le SI de mon
+            entreprise actuelle tout en poursuivant dans le développement
+            d’applications et l’intégration de solutions techniques. Mon
+            objectif est de rejoindre une équipe où je pourrai mettre à profit
+            mes compétences en développement, en architecture logicielle et en
+            gestion de projets.
+          </p>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-blue-900 text-white text-center py-4 mt-20">
+        © 2026 – Hervé | Portfolio BTS SIO SLAM
+      </footer>
+    </div>
+  </body>
 </html>
