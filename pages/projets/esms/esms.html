@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projets ESMS | BTS SIO SLAM</title>
+    <link rel="stylesheet" href="../../../assets/styles/caroussel.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="relative bg-gray-100 text-gray-900">
+    <!-- BACKGROUND IMAGE -->
+    <div
+      class="absolute inset-0 bg-[url('../../../assets/img/background/bg-code.jpg')] bg-cover bg-center bg-fixed opacity-20"
+    ></div>
+    <!-- OVERLAY CLAIR -->
+    <div class="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
+
+    <!-- CONTENT -->
+    <div class="relative">
+      <!-- HEADER -->
+      <header class="bg-blue-900 text-white shadow">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center p-5">
+          <h1 class="text-xl font-semibold">
+            PORTFOLIO - Projet ESMS – BTS SIO SLAM
+          </h1>
+          <ul class="flex gap-6 text-sm">
+            <li>
+              <a
+                href="../../../index.html"
+                class="hover:text-blue-300 transition"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a href="../projets.html" class="hover:text-blue-300 transition"
+                >Projets</a
+              >
+            </li>
+            <li>
+              <a href="competences.html" class="hover:text-blue-300 transition"
+                >Compétences</a
+              >
+            </li>
+            <li>
+              <a href="veille.html" class="hover:text-blue-300 transition"
+                >Veille</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-blue-300 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- HERO SECTION -->
+      <section
+        class="relative min-h-[35vh] flex items-center justify-center text-center text-white"
+      >
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style="
+            background-image: url(&quot;../../../assets/img/background-code.jpg&quot;);
+          "
+        ></div>
+
+        <div
+          class="absolute inset-0 bg-blue-900 bg-opacity-40"
+        ></div>
+
+        <div class="relative z-10 max-w-3xl px-6">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Projet ESMS</h1>
+          <p class="text-xl md:text-2xl opacity-90">
+            Application Web & Mobile – Gestion des interventions techniques
+          </p>
+        </div>
+      </section>
+      <!-- PRESENTATION DU PROJET -->
+      <section class="py-16 bg-gray-100">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-blue-800 mb-6">
+            Présentation du projet
+          </h2>
+
+          <p class="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
+            Le projet ESMS est une solution complète destinée aux établissements
+            et services médico-sociaux. Il permet de gérer efficacement les
+            demandes d'interventions du service technique, grâce à une
+            application web, une application mobile, une API dédiée et une base
+            de données centralisée.
+          </p>
+        </div>
+      </section>
+      <section class="py-16">
+        <div class="max-w-5xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">
+            Contexte & Objectifs
+          </h2>
+
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+              Fort de plus de <strong>20 ans d'expérience</strong> dans un ESMS
+              en tant que responsable de la maintenance et coordinateur
+              logistique, j'ai pu constater les difficultés rencontrées par le
+              service technique pour gérer les demandes d'interventions.
+            </p>
+
+            <p class="text-gray-700 text-lg leading-relaxed">
+              C'est pourquoi j'ai décidé de développer une solution complète
+              permettant de suivre, organiser et traiter efficacement les
+              demandes d'interventions techniques.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULES DU PROJET -->
+      <section class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-blue-800 text-center mb-12">
+            Les 4 modules du projet ESMS
+          </h2>
+
+          <div class="relative max-w-[900px] mx-auto">
+            <!-- Flèche gauche -->
+            <button
+              onclick="prevSlide()"
+              class="absolute -left-12 top-1/2 -translate-y-1/2 bg-blue-800 bg-opacity-40 text-white shadow p-3 rounded-full z-10"
+            >
+              ‹
+            </button>
+
+            <!-- Flèche droite -->
+            <button
+              onclick="nextSlide()"
+              class="absolute -right-12 top-1/2 -translate-y-1/2 bg-blue-800 bg-opacity-40 text-white shadow p-3 rounded-full z-10"
+            >
+              ›
+            </button>
+
+            <!-- Slider -->
+            <div
+              id="slider"
+              class="flex gap-10 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory px-2 max-w-[750px] mx-auto"
+            >
+              <!-- Slide 1 -->
+              <div id="slide1" class="snap-center min-w-[350px]">
+                <!-- Web App -->
+                <div
+                  class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
+                >
+                  <img
+                    src="../../../assets/img/esms/app/esms-home.png"
+                    alt="ESMS Web App"
+                    class="rounded-t-xl w-full h-48 object-cover"
+                  />
+                  <div class="p-6">
+                    <h3
+                      class="text-xl font-semibold text-blue-700 mb-4 text-center"
+                    >
+                      ESMS Web App
+                    </h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                      Interface web pour les utilisateurs, techniciens et
+                      administrateurs.
+                    </p>
+                    <div class="text-center">
+                      <a
+                        href="./webapp.html"
+                        class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-500 font-semibold"
+                        >Voir le projet →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div id="slide2" class="snap-center min-w-[350px]">
+                <!-- Mobile App -->
+                <div
+                  class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
+                >
+                  <img
+                    src="../../../assets/img/esms/mobile/esms-home.png"
+                    alt="ESMS Mobile App"
+                    class="rounded-t-xl w-full h-48 object-contain"
+                  />
+                  <div class="p-6">
+                    <h3
+                      class="text-xl font-semibold text-blue-700 mb-4 text-center"
+                    >
+                      ESMS App Mobile
+                    </h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                      Application mobile pour les techniciens en intervention.
+                    </p>
+                    <div class="text-center">
+                      <a
+                        href="./mobile.html"
+                        class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-500 font-semibold"
+                        >Voir le projet →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div id="slide3" class="snap-center min-w-[350px]">
+                <!-- API -->
+                <div
+                  class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
+                >
+                  <img
+                    src="../../../assets/img/esms/api/esms-api-symfony.png"
+                    alt="ESMS API"
+                    class="rounded-t-xl w-full h-48 object-cover"
+                  />
+                  <div class="p-6">
+                    <h3
+                      class="text-xl font-semibold text-blue-700 mb-4 text-center"
+                    >
+                      ESMS API
+                    </h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                      API REST assurant la communication entre les modules.
+                    </p>
+                    <div class="text-center">
+                      <a
+                        href="./api.html"
+                        class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-500 font-semibold"
+                        >Voir le projet →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div id="slide4" class="snap-center min-w-[350px]">
+                <!-- Database -->
+                <div
+                  class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
+                >
+                  <img
+                    src="../../../assets/img/esms/db/esms-db-mld.png"
+                    alt="ESMS Database"
+                    class="rounded-t-xl w-full h-48 object-contain"
+                  />
+                  <div class="p-6">
+                    <h3
+                      class="text-xl font-semibold text-blue-700 mb-4 text-center"
+                    >
+                      ESMS Database
+                    </h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                      Base de données centralisant les informations des modules.
+                    </p>
+                    <div class="text-center">
+                      <a
+                        href="./database.html"
+                        class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-500 font-semibold"
+                        >Voir le projet →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="py-6 text-center text-gray-600">
+        © 2026 – Hervé MORATILLE | Portfolio BTS SIO SLAM
+      </footer>
+    </div>
+
+    <script src="../../../assets/scripts/caroussel.js"></script>
+  </body>
+</html>

@@ -12,29 +12,52 @@
       class="absolute inset-0 bg-[url('assets/img/background/bg-code.jpg')] bg-cover bg-center bg-fixed opacity-20"
     ></div>
     <!-- OVERLAY CLAIR -->
-    <div class="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
+    <div class="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
 
     <!-- CONTENT -->
     <div class="relative">
       <!-- HEADER -->
-      <header class="bg-blue-900 text-white shadow">
+      <header class="relative z-30 bg-blue-900 text-white shadow">
         <nav class="max-w-6xl mx-auto flex justify-between items-center p-5">
-          <h1 class="text-xl font-semibold">
-            Portfolio - BTS SIO option SLAM
-          </h1>
+          <h1 class="text-xl font-semibold">Hervé MORATILLE | Portofolio</h1>
           <ul class="flex gap-6 text-sm">
             <li>
-              <a href="../index.html" class="hover:text-blue-300 transition"
+              <a href="index.html" class="hover:text-blue-300 transition"
                 >Accueil</a
               >
             </li>
-            <li>
+            <li class="relative group">
               <a
-                href="pages/projets.html"
-                class="hover:text-blue-300 transition"
-                >Projets</a
+                href="../pages/projets/projets.html"
+                class="text-white hover:text-blue-200 transition"
               >
+                Projets
+              </a>
+
+              <!-- Sous-menu -->
+              <ul
+                class="absolute z-40 left-0 top-full w-40 bg-white text-gray-700 rounded-lg shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto"
+              >
+                <li>
+                  <a
+                    href="../pages/projets/esms/esms.html"
+                    class="block px-4 py-2 hover:bg-gray-100 rounded-t-lg"
+                  >
+                    ESMS
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="../pages/projets/parcsi/parcsi.html"
+                    class="block px-4 py-2 hover:bg-gray-100 rounded-b-lg"
+                  >
+                    PARCSI
+                  </a>
+                </li>
+              </ul>
             </li>
+
             <li>
               <a href="competences.html" class="hover:text-blue-300 transition"
                 >Compétences</a
@@ -54,65 +77,169 @@
         </nav>
       </header>
 
+      <!-- HERO SECTION -->
+      <section
+        class="relative min-h-[45vh] flex items-center justify-center text-center text-white"
+      >
+        <!-- Background -->
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style="
+            background-image: url(&quot;./assets/img/background-code.jpg&quot;);
+          "
+        ></div>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-blue-900 bg-opacity-40"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-3xl px-6">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Portfolio – BTS SIO SLAM
+          </h1>
+          <p class="text-xl md:text-2xl opacity-90">
+            Développement • Systèmes • Projets techniques
+          </p>
+        </div>
+      </section>
+
       <!-- SECTION A PROPOS -->
-      <section class="max-w-5xl mx-auto py-20 px-6">
-        <h2 class="text-4xl font-bold text-blue-900 mb-10 text-center">
-          Hervé MORATILLE
-        </h2>
+      <section class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-blue-800 text-center mb-12">
+            À propos
+          </h2>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <!-- CV PREVIEW -->
-          <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-            <img
-              src="assets/img/cv-preview.png"
-              class="rounded-lg shadow w-56 h-auto mb-6 mx-auto"
-              alt="Aperçu du CV"
-            />
+          <div class="grid md:grid-cols-3 gap-10">
+            <!-- Bloc 1 -->
+            <div
+              class="bg-white p-8 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
+            >
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">Parcours</h3>
+              <p class="text-gray-700">
+                J'étudie en cours du soir le BTS SIO option SLAM et je travaille
+                depuis plusieurs années dans le secteur médico‑social en tant
+                qu’agent technique supérieur et référent informatique.
+              </p>
+            </div>
 
-            <h3 class="text-2xl font-semibold text-blue-800 mb-4">Mon CV</h3>
+            <!-- Bloc 2 -->
+            <div
+              class="bg-white p-8 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
+            >
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">
+                Motivation
+              </h3>
+              <p class="text-gray-700">
+                Le BTS SIO me permet de valider les compétences acquises et
+                d’envisager une réorientation vers l’informatique, un domaine
+                qui m’a toujours passionné.
+              </p>
+            </div>
 
-            <p class="text-gray-700 mb-6">
+            <!-- Bloc 3 -->
+            <div
+              class="bg-white p-8 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
+            >
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">Approche</h3>
+              <p class="text-gray-700">
+                Je me spécialise dans le développement, l’administration
+                systèmes et la gestion de projets. Mon parcours atypique me
+                permet d’apporter une vision concrète, rigoureuse et orientée
+                terrain.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION COMPETENCES -->
+      <section class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-blue-800 text-center mb-12">
+            Compétences clés
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">
+                Développement
+              </h3>
+              <p class="text-gray-700">
+                PHP / Symfony<br />JavaScript, AJAX, API REST<br />React, Vite,
+                NodeJs
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">Systèmes</h3>
+              <p class="text-gray-700">
+                Windows, Linux<br />Administration systèmes<br />MySQL / MariaDB
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+              <h3 class="text-xl font-semibold text-blue-700 mb-4">
+                Projets & DevOps
+              </h3>
+              <p class="text-gray-700">
+                Gestion de projets<br />Documentation<br />Git / GitHub
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION OBJECTIFS PROFESSIONNELS -->
+      <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-blue-800 mb-6">
+            Objectifs professionnels
+          </h2>
+
+          <p class="text-gray-700 text-lg leading-relaxed mb-10">
+            À l’issue de mon BTS SIO SLAM, je souhaite renforcer le SI de mon
+            entreprise actuelle tout en poursuivant dans le développement
+            d’applications et l’intégration de solutions techniques.
+          </p>
+
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Mon objectif est de rejoindre une équipe où je pourrai mettre à
+            profit mes compétences en développement, en architecture logicielle
+            et en gestion de projets.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION CV -->
+      <section class="py-20 bg-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="bg-white rounded-xl shadow-lg p-10">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">
+              Mon CV
+            </h2>
+
+            <p class="text-gray-700 text-lg text-center mb-10">
               Retrouvez mon parcours professionnel, mes compétences techniques
               et mes expériences dans mon CV complet au format PDF.
             </p>
 
-            <div class="flex flex-row items-center justify-center gap-6 mt-8">
-              <!-- Bouton Voir en ligne -->
+            <div class="flex flex-row justify-center gap-6">
               <a
-                href="pages/cv.html"
+                href="./pages/cv.html"
                 class="inline-flex items-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:-translate-y-1 hover:scale-105 hover:shadow-xl transition transform duration-200"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 inline-block"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
                 Voir en ligne
               </a>
-              <!-- Bouton Télécharger -->
+
               <a
-                href="assets/pdf/CV-Hervé MORATILLE.pdf"
+                href="./assets/pdf/CV-Hervé MORATILLE.pdf"
                 class="inline-flex items-center gap-2 bg-gray-200 text-blue-800 px-6 py-3 rounded-lg shadow hover:-translate-y-1 hover:scale-105 hover:shadow-xl transition transform duration-200"
                 download
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 inline-block"
+                  class="w-6 h-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -127,89 +254,11 @@
               </a>
             </div>
           </div>
-
-          <!-- TEXTE -->
-          <div class="space-y-6 text-lg leading-relaxed">
-            <p class="text-gray-700">
-              J'étudie "en cours du soir" le
-              <strong>BTS SIO option SLAM</strong>. Je travaille depuis
-              plusieurs années dans le secteur médico‑social en tant qu’agent
-              technique supérieur, et j'ai aussi effectué une mission en tant
-              que <strong>référent informatique</strong>, pendant 4 ans, au sein
-              de l'association qui m'emploie. Le BTS SIO me permet de valider
-              les compétences acquises et pourquoi pas me réorienter vers
-              l’informatique, un domaine qui m’a toujours passionné.
-            </p>
-
-            <p class="text-gray-700">
-              Aujourd’hui, je me spécialise dans le
-              <strong>développement d’applications</strong>, l’<strong
-                >administration de systèmes</strong
-              >
-              et la <strong>gestion de projets techniques</strong>. J’aime
-              concevoir des solutions fiables, documentées et adaptées aux
-              besoins des utilisateurs.
-            </p>
-
-            <p class="text-gray-700">
-              Mon parcours atypique me permet d’apporter une vision concrète,
-              rigoureuse et orientée terrain, notamment dans les environnements
-              professionnels exigeants comme les ESMS.
-            </p>
-          </div>
-        </div>
-
-        <!-- COMPETENCES -->
-        <div class="mt-20">
-          <h3 class="text-3xl font-semibold text-blue-800 mb-6">
-            Compétences clés
-          </h3>
-
-          <ul class="grid md:grid-cols-2 gap-4 text-lg">
-            <li class="bg-white p-4 rounded-lg shadow">
-              Développement PHP / Symfony
-            </li>
-            <li class="bg-white p-4 rounded-lg shadow">
-              JavaScript, AJAX, API REST
-            </li>
-            <li class="bg-white p-4 rounded-lg shadow">
-              Développement REACT Vite / NodeJs
-            </li>
-            <li class="bg-white p-4 rounded-lg shadow">Bootstrap, Mui</li>
-            <li class="bg-white p-4 rounded-lg shadow">
-              Gestion de projets & documentation
-            </li>
-            <li class="bg-white p-4 rounded-lg shadow">
-              Administration systèmes (Windows, Linux)
-            </li>
-            <li class="bg-white p-4 rounded-lg shadow">
-              Bases de données MySQL / MariaDB
-            </li>
-            <li class="bg-white p-4 rounded-lg shadow">
-              Déploiement & versionnement (Git, GitHub)
-            </li>
-          </ul>
-        </div>
-
-        <!-- OBJECTIFS -->
-        <div class="mt-20">
-          <h3 class="text-3xl font-semibold text-blue-800 mb-6">
-            Objectifs professionnels
-          </h3>
-
-          <p class="text-lg text-gray-700 leading-relaxed">
-            À l’issue de mon BTS SIO SLAM, je souhaite renforcer le SI de mon
-            entreprise actuelle tout en poursuivant dans le développement
-            d’applications et l’intégration de solutions techniques. Mon
-            objectif est de rejoindre une équipe où je pourrai mettre à profit
-            mes compétences en développement, en architecture logicielle et en
-            gestion de projets.
-          </p>
         </div>
       </section>
 
       <!-- FOOTER -->
-      <footer class="bg-blue-900 text-white text-center py-4 mt-20">
+      <footer class="py-6 text-center text-gray-600">
         © 2026 – Hervé | Portfolio BTS SIO SLAM
       </footer>
     </div>
