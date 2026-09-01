@@ -20,7 +20,7 @@
       <header class="bg-blue-900 text-white shadow">
         <nav class="max-w-6xl mx-auto flex justify-between items-center p-5">
           <h1 class="text-xl font-semibold">
-            Projet ESMS | DATABASE – BTS SIO SLAM
+            Projet ESMS | Tests – BTS SIO SLAM
           </h1>
           <ul class="flex gap-6 text-sm">
             <li>
@@ -56,114 +56,344 @@
       <!-- SECTION 1 -->
       <section class="py-16 bg-white">
         <div class="max-w-5xl mx-auto px-6">
+          <!-- TITRE -->
           <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">
             Tests et validations du projet ESMS
           </h2>
+
+          <!-- INTRO -->
           <div class="bg-blue-50 border-l-4 border-blue-700 p-4 rounded mb-8">
             <p class="text-gray-700">
-              Cette section est dédiée aux tests et validations du projet ESMS.
-              Elle présente les différentes étapes de vérification, les résultats
-              obtenus, ainsi que les ajustements effectués pour garantir la
-              qualité et la fiabilité de l'application. Les tests couvrent
-              l'ensemble des fonctionnalités, de la base de données à
-              l'interface utilisateur, en passant par les API et les modules
-              spécifiques.
+              Cette section présente la stratégie de tests du projet ESMS. Elle
+              couvre l’ensemble des couches du système : API Symfony, base
+              MySQL, Web App, application mobile et tests d’intégration.
+              L’objectif est de démontrer la fiabilité, la cohérence et la bonne
+              communication entre les différents modules du système
+              d’information.
             </p>
           </div>
 
-            <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
-              Objectifs et stratégie de test
-            </h3>
+          <!-- ARCHITECTURE DES TESTS -->
+          <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
+            Architecture des tests
+          </h3>
 
-            
+          <div class="bg-gray-50 p-4 rounded-lg shadow-inner mb-8">
+            <pre
+              class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap"
+            >
+              Web App  ↔  API Symfony  ↔  MySQL
+              Application Mobile  ↗
 
-            <!-- Tests API -->
-            <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
-              Tests API avec Postman
-            </h3>
-            <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
-              <!-- Remplacer par l'image de votre MCD -->
-              <img
-                src="../../../assets/img/esms/test-api-postman.png"
-                alt="Tests API ESMS"
-                class="w-full h-auto rounded"
-              />
-            </div>
-            <!-- Tests Base MySQL -->
-            <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
-              Tests de la Base MySQL
-            </h3>
-            <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
-              <img
-                src="../../../assets/img/esms/test-bd.png"
-                alt="tests base MySQL ESMS"
-                class="w-full h-auto rounded"
-              />
-            </div>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              
-            </p>
-            
+              Les tests ont été réalisés sur chaque couche du système :
+              - API : vérification des endpoints via Postman
+              - Base de données : validation des écritures MySQL
+              - Web App : tests fonctionnels utilisateur
+              - Application mobile : tests de création et consultation
+              - Intégration : validation de la chaîne complète (Mobile → API → MySQL → Web)
+          </pre
+            >
+          </div>
 
-            <!-- Tests Fonctionnels -->
-            <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
-              Tests Fonctionnels
-            </h3>
-            <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
-              <img
-                src="../../../assets/img/esms/test-fonctionnel.png"
-                alt="tests fonctionnels ESMS"
-                class="w-full h-auto rounded"
-              />
-            </div>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              
-            </p>
-            
-            <!-- Tests droits et rôles -->
-            <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
-              Tests des Droits et Rôles
-            </h3>
-            <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
-              <img
-                src="../../../assets/img/esms/test-droits-roles.png"
-                alt="tests droits et rôles ESMS"
-                class="w-full h-auto rounded"
-              />
-            </div>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              
-            </p>
+          <!-- TESTS API -->
+          <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
+            Tests API avec Postman
+          </h3>
 
-            <!-- Tests intégration -->
-            <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
-              Tests d'Intégration WEB/API/BDD
-            </h3>
+          <p class="text-gray-700 mb-4">
+            L'obejectif des tests API est de valider le fonctionnement des
+            endpoints REST du module ESMS. Par exemple, les opérations CRUD ont
+            été testées sur l'entité <strong>ticket</strong>. Dans les faits, un
+            ticket est créé pour un service donné. Tous peuvent consulter les
+            tickets mais seuls les techniciens peuvent les modifier ou les
+            clôturer. Tous peuvent ajouter un commentaire à un ticket.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Avant toute opération sur un ticket, l'utilisateur doit être
+            authentifié via un token JWT. Il faut donc d'abord se connecter pour
+            obtenir ce token, puis l'utiliser dans les requêtes suivantes.
+          </p>
+
+          <h5 class="text-xl font-semibold text-blue-700 mt-4 mb-2">
+            Étape 1 : Authentification
+          </h5>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-inner mb-8">
+            <pre
+              class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap"
+            >
+              POST /auth/login
+                → Vérification via Doctrine
+                → Génération du token JWT
+                → Récupération du token dans Postman
+          </pre
+            >
             <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
               <img
-                src="../../../assets/img/esms/test-integration.png"
-                alt="tests d'intégration ESMS"
-                class="w-full h-auto rounded"
+                src="../../../assets/img/esms/tests/test-token.png"
+                class="w-full rounded"
               />
             </div>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              
-            </p>
-            
-            <!-- Résultats -->
-            <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
-              Résultats et corrections
-            </h3>
-            <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
-              <img
-                src="../../../assets/img/esms/test-resultats.png"
-                alt="résultats ESMS"
-                class="w-full h-auto rounded"
-              />
-            </div>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              
-            </p>
+          </div>
+          <h5 class="text-xl font-semibold text-blue-700 mt-4 mb-2">
+            Étape 2 : Autorisation
+          </h5>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-inner mb-8">
+            <pre
+              class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap"
+            >
+              Postman → Authorization → Bearer Token
+                → Coller le token JWT
+          </pre
+            >
+            <img
+              src="../../../assets/img/esms/tests/test-token-paste.png"
+              class="w-full rounded"
+            />
+          </div>
+          <h5 class="text-xl font-semibold text-blue-700 mt-4 mb-2">
+            Étape 3 : Opérations CRUD
+          </h5>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>
+              POST /tickets → création d’un ticket
+              <ul>
+                <li>
+                  <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+                    <img
+                      src="../../../assets/img/esms/tests/test-new-ticket.png"
+                      class="w-full rounded"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              GET /services/{id}/tickets → récupération de tous les tickets d’un
+              service
+              <ul>
+                <li>
+                  <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+                    <img
+                      src="../../../assets/img/esms/tests/test-getAllTicketByService.png"
+                      class="w-full rounded"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>GET /tickets/{id} → récupération d’un ticket
+              <ul>
+                <li>
+                  <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+                    <img
+                      src="../../../assets/img/esms/tests/test-getTicketById.png"
+                      class="w-full rounded"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              PUT  → modification de l'état d'un ticket (lu/non lu, clôturé)
+              <div class="bg-gray-50 p-4 rounded-lg shadow-inner mb-8">
+                <pre
+                  class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap"
+                >
+                Pour le ticket avec l'id: 7:
+                  -> Il s'agit de le marquer comme lu en modifiant le champ is_read
+                  -> De le clôturer en modifiant le champ "closing_date"
+                      * Etat initial du ticket -> non lu : is_read : false
+                                               -> non clôturé: closing_date : null
+                </pre
+                >
+                <img
+                  src="../../../assets/img/esms/tests/test-updateTicket-init.png"
+                  class="w-full rounded"
+                />
+                <pre
+                  class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap mt-5"
+                >                
+                      * PUT /tickets/{id}
+                        -> Modification du champ: -> is_read : True -> ticket lu                                                  
+                </pre
+                >
+                <img
+                  src="../../../assets/img/esms/tests/test-updateTicket-isRead.png"
+                  class="w-full rounded"
+                />
+
+                <pre
+                  class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap mt-5"
+                >                
+                      * PUT /tickets/{id}/close
+                        -> Modification du champ: -> closing_date -> 'ajout d'une date'-> ticket clôturé                                                
+                </pre
+                >
+                <img
+                  src="../../../assets/img/esms/tests/test-updateTicket-isClose.png"
+                  class="w-full rounded"
+                />
+              </div>
+            </li>
+            <li>POST /tickets/{id}/comments → ajout d'un commentaire</li>
+            <ul>
+              <li>
+                <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+                  <img
+                    src="../../../assets/img/esms/tests/test-add-comment.png"
+                    class="w-full rounded"
+                  />
+                </div>
+              </li>
+            </ul>
+          </ul>
+
+          <p class="text-gray-700 mt-4">Tests d’erreurs :</p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>ticket sans titre</li>
+            <li>utilisateur non authentifié</li>
+            <li>ID inexistant</li>
+            <li>valeur incorrecte</li>
+            <li>droits insuffisants</li>
+          </ul>
+
+          <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+            <img
+              src="../../../assets/img/esms/test-api-postman.png"
+              class="w-full rounded"
+            />
+          </div>
+
+          <!-- TESTS MYSQL -->
+          <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
+            Tests de la Base MySQL
+          </h3>
+
+          <p class="text-gray-700 mb-4">
+            Après la création d’un ticket via Postman, une vérification directe
+            dans MySQL a permis de confirmer l’enregistrement :
+          </p>
+
+          <pre class="bg-gray-100 p-4 rounded text-sm text-gray-700">
+            SELECT * FROM ticket WHERE id = 123;
+          </pre>
+
+          <p class="text-gray-700 mt-4">
+            Ce test valide la chaîne :
+            <strong>Postman → API Symfony → Doctrine ORM → MySQL</strong>
+          </p>
+
+          <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+            <img
+              src="../../../assets/img/esms/test-bd.png"
+              class="w-full rounded"
+            />
+          </div>
+
+          <!-- TESTS WEB APP -->
+          <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
+            Tests de la Web App
+          </h3>
+
+          <p class="text-gray-700 mb-4">
+            Les tests fonctionnels ont été réalisés directement via l’interface
+            Web :
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Connexion utilisateur</li>
+            <li>Création d’un ticket</li>
+            <li>Affichage dans la liste des tickets</li>
+            <li>Modification d’un ticket</li>
+            <li>Suppression</li>
+          </ul>
+
+          <p class="text-gray-700 mt-4">
+            Ces tests valident la chaîne :
+            <strong>Web App → API Symfony → MySQL</strong>
+          </p>
+
+          <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+            <img
+              src="../../../assets/img/esms/test-fonctionnel.png"
+              class="w-full rounded"
+            />
+          </div>
+
+          <!-- TESTS MOBILE -->
+          <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
+            Tests de l’Application Mobile
+          </h3>
+
+          <p class="text-gray-700 mb-4">
+            L’application mobile ESMS a été testée pour vérifier :
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Connexion utilisateur</li>
+            <li>Création d’un ticket</li>
+            <li>Consultation des tickets</li>
+          </ul>
+
+          <p class="text-gray-700 mt-4">
+            Test d’intégration intéressant :
+            <strong
+              >Création depuis le mobile → Vérification dans la Web App</strong
+            >
+          </p>
+
+          <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+            <img
+              src="../../../assets/img/esms/test-droits-roles.png"
+              class="w-full rounded"
+            />
+          </div>
+
+          <!-- TESTS INTEGRATION -->
+          <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
+            Tests d’Intégration (WEB / API / BDD / Mobile)
+          </h3>
+
+          <p class="text-gray-700 mb-4">
+            Les tests d’intégration ont validé la cohérence de l’ensemble du
+            système ESMS :
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Mobile → API → MySQL → Web</li>
+            <li>Web → API → MySQL → Mobile</li>
+            <li>Synchronisation des tickets</li>
+            <li>Respect des droits et rôles</li>
+          </ul>
+
+          <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+            <img
+              src="../../../assets/img/esms/test-integration.png"
+              class="w-full rounded"
+            />
+          </div>
+
+          <!-- RESULTATS -->
+          <h3 class="text-2xl font-semibold text-blue-700 mt-8 mb-4">
+            Résultats et corrections
+          </h3>
+
+          <p class="text-gray-700 mb-4">
+            Les tests ont permis d’identifier plusieurs points d’amélioration :
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Gestion des erreurs API</li>
+            <li>Amélioration des messages d’alerte</li>
+            <li>Correction de droits d’accès</li>
+            <li>Optimisation de certaines requêtes Doctrine</li>
+          </ul>
+
+          <div class="my-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+            <img
+              src="../../../assets/img/esms/test-resultats.png"
+              class="w-full rounded"
+            />
           </div>
         </div>
       </section>
