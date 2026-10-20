@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("assets/components/menu.html")
+  fetch("/PORTFOLIO/assets/components/menu.html")
     .then(response => response.text())
     .then(html => {
       document.body.insertAdjacentHTML("afterbegin", html);
