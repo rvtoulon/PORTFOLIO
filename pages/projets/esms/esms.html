@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Projets ESMS | BTS SIO SLAM</title>
-    <link rel="stylesheet" href="/assets/styles/caroussel.css" />
+    <link rel="stylesheet" href="../../../assets/styles/hero.css" />
+    <link rel="stylesheet" href="../../../assets/styles/caroussel.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body class="relative bg-gray-100 text-gray-900">
     <!-- BACKGROUND IMAGE -->
     <div
-      class="absolute inset-0 bg-[url('/assets/img/background/bg-code.jpg')] bg-cover bg-center bg-fixed opacity-20"
+      class="absolute inset-0 bg-[url('../../../assets/img/background/bg-code.jpg')] bg-cover bg-center bg-fixed opacity-20"
     ></div>
     <!-- OVERLAY CLAIR -->
     <div class="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
@@ -22,16 +23,10 @@
 
       <!-- HERO SECTION -->
       <section
-        class="relative min-h-[35vh] flex items-center justify-center text-center text-white"
+        class="hero min-h-[35vh] flex items-center justify-center text-center text-white"
       >
-        <div
-          class="absolute inset-0 bg-cover bg-center"
-          style="
-            background-image: url(&quot;../../../assets/img/background-code.jpg&quot;);
-          "
-        ></div>
-
-        <div class="absolute inset-0 bg-blue-900 bg-opacity-40"></div>
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
 
         <div class="relative z-10 max-w-3xl px-6">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Projet ESMS</h1>
@@ -149,7 +144,7 @@
                   class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
                 >
                   <img
-                    src="/assets/img/esms/db/esms-db-mld.png"
+                    src="../../../assets/img/esms/db/esms-db-mld.png"
                     alt="ESMS Database"
                     class="rounded-t-xl w-full h-48 object-contain"
                   />
@@ -179,7 +174,7 @@
                   class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
                 >
                   <img
-                    src="/assets/img/esms/api/esms-api-symfony.png"
+                    src="../../../assets/img/esms/api/esms-api-symfony.png"
                     alt="ESMS API"
                     class="rounded-t-xl w-full h-48 object-cover"
                   />
@@ -209,7 +204,7 @@
                     class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
                   >
                     <img
-                      src="/assets/img/esms/app/esms-home.png"
+                      src="../../../assets/img/esms/app/esms-home.png"
                       alt="ESMS Web App"
                       class="rounded-t-xl w-full h-48 object-cover"
                     />
@@ -242,7 +237,7 @@
                   class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
                 >
                   <img
-                    src="/assets/img/esms/mobile/esms-home.png"
+                    src="../../../assets/img/esms/mobile/esms-home.png"
                     alt="ESMS Mobile App"
                     class="rounded-t-xl w-full h-48 object-contain"
                   />
@@ -280,7 +275,7 @@
             class="snap-center min-w-[350px] bg-white rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition transform duration-200"
           >
             <img
-              src="/assets/img/esms/tests/tests-img.jpg"
+              src="../../../assets/img/esms/tests/tests-img.jpg"
               alt="ESMS Validation"
               class="rounded-t-xl w-full h-48 object-contain p-4"
             />
@@ -308,7 +303,7 @@
       </footer>
     </div>
 
-    <script src="/assets/scripts/caroussel.js"></script>
-    <script src="/assets/scripts/menu.js"></script>
+    <script src="../../../assets/scripts/caroussel.js"></script>
+    <script src="../../../assets/scripts/menu.js"></script>
   </body>
 </html>

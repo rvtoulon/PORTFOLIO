@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>Portfolio | BTS SIO SLAM</title>
+    <link rel="stylesheet" href="./assets/styles/hero.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body class="relative bg-gray-100 text-gray-900">
     <!-- BACKGROUND IMAGE -->
     <div
-      class="absolute inset-0 bg-[url('/PORTFOLIO/assets/img/background/bg-code.jpg')] bg-cover bg-center bg-fixed opacity-20"
+      class="absolute inset-0 bg-[url('./assets/img/background/bg-code.jpg')] bg-cover bg-center bg-fixed opacity-20"
     ></div>
     <!-- OVERLAY CLAIR -->
     <div class="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
@@ -20,18 +21,10 @@
 
       <!-- HERO SECTION -->
       <section
-        class="relative min-h-[45vh] flex items-center justify-center text-center text-white"
+        class="hero min-h-[45vh] flex items-center justify-center text-center text-white"
       >
-        <!-- Background -->
-        <div
-          class="absolute inset-0 bg-cover bg-center"
-          style="
-            background-image: url(&quot;./assets/img/background-code.jpg&quot;);
-          "
-        ></div>
-
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-blue-900 bg-opacity-40"></div>
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
 
         <!-- Content -->
         <div class="relative z-10 max-w-3xl px-6">
@@ -203,6 +196,6 @@
         © 2026 – Hervé | Portfolio BTS SIO SLAM
       </footer>
     </div>
-    <script src="/PORTFOLIO/assets/scripts/menu.js"></script>
+    <script src="assets/scripts/menu.js"></script>
   </body>
 </html>
