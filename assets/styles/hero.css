@@ -8,8 +8,8 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url("../img/background/bg-code.jpg") center / cover;
-  opacity: 0.4;
+  background: url("../img/background/bg-hero.jpg") center / cover;
+  opacity: 0.8;
   filter: blur(4px);
   transform: scale(1.1);
 }
@@ -17,5 +17,6 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(30, 58, 138, 0.4);
+  background-color: rgba(147, 172, 240, 0.4);
+  backdrop-filter: blur(10px);
 }
